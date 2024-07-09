@@ -4,6 +4,25 @@ const tableName = "pickupline_table";
 
 $(() => {
 
+    $('.btnToCopy').on('click', function(e) {
+        e.preventDefault();
+
+        var content = $('.pickupline').text();
+
+        var tempArea = document.createElement("textarea");
+        tempArea.value = content;
+        document.body.appendChild(tempArea);
+
+        tempArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempArea);
+
+        Swal.fire({
+            text: 'Copied to clipboard',
+            confirmButtonColor: '#f391b8'
+        });
+    })
+
     $('.btnGenerate').on('click', function(e) {
         e.preventDefault();
 

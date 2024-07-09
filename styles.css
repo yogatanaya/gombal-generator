@@ -9,3 +9,9 @@
     flex-direction: column;
     align-items: center;
 }
+
+.btn:focus, 
+.btn:active {
+    box-shadow: none !important;
+    outline: none;
+}
